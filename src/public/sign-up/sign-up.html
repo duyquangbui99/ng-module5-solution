@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Sign Up for Our Newsletter</h2>
+    <form name="signUpForm" ng-submit="signUpCtrl.submitForm()">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" ng-model="signUpCtrl.user.firstName" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" ng-model="signUpCtrl.user.lastName" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" ng-model="signUpCtrl.user.email" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" ng-model="signUpCtrl.user.phone" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="favoriteDish">Favorite Dish (e.g., L1):</label>
+            <input type="text" id="favoriteDish" ng-model="signUpCtrl.user.favoriteDish" required class="form-control">
+            <span ng-if="signUpCtrl.invalidDish" class="text-danger">No such menu number exists</span>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid">Submit</button>
+        <p ng-if="signUpCtrl.infoSaved" class="text-success">Your information has been saved!</p>
+    </form>
+</div>
